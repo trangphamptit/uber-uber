@@ -13,6 +13,7 @@ import ShowDestination from "./Pages/ShowDestination/ShowDestination";
 import ConfirmPage from "./Pages/ConfirmPage/ConfirmPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 import { Redirect } from "react-router-dom";
+import UberCarePage from "./Pages/UberCarePage/UberCarePage";
 import UberWorkPage from "./Pages/UberWorkPage/UberWorkPage";
 class App extends Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class App extends Component {
             <Route path="/contactpage" component={ContactPage} />
             {/* {this.checkUser()} */}
             {/* <Route path="/" exact component={HomePage} /> */}
+            {/* <Route path="/" exact component={UberCarePage} /> */}
             <Route path="/" exact component={UberWorkPage} />
           </Switch>
         </BrowserRouter>

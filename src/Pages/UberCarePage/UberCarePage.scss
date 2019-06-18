@@ -1,0 +1,29 @@
+.ubercarepage {
+  background-image: url("../../img/background2.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 75px;
+}
+
+.ubercareform {
+  width: 90%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 15px;
+}
+p.gray {
+  color: gray;
+  font-size: 0.8em;
+}
+p {
+  font-size: 1em;
+}
+article {
+  padding-bottom: 20px;
+}
+h1.ubercaretitle {
+  margin-bottom: 20px;
+}

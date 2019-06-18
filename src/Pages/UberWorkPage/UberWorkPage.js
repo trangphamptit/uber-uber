@@ -5,40 +5,52 @@ class UberWorkPage extends Component {
     return (
       <div className="uberworkpage">
         <form className="uberworkform">
-          <h1 className="uberworktitle">
-            At Uber we can care about you & the trust you give us
-          </h1>
-          <p>
-            We use your data to provide convenient transportation and delivery
-            options, to help drivers maximize their earnings, and to protect the
-            safety and security of user. We use your data to provide convenient
-            transportation and delivery options, to help drivers maximize their
-            earnings, and to protect the safety and security of user.
-          </p>
-          <article>
-            <h4>Your data is work for you</h4>
-            <p className="gray">
-              We use your data to provide convenient transportation and delivery
-              options, to help drivers maximize their earnings, and to protect
-              the safety and security of user.{" "}
+          <h1>How Uber works</h1>
+          <div className="uberworkcontent">
+            <p>
+              On demand transportation technology is our core service. and the
+              app that connects driver-partners and riders is what makes at
+              possible. Here's how is works, step by step.{" "}
             </p>
-          </article>
-          <article>
-            <h4>Safety first</h4>
-            <p className="gray">
-              We use your data to provide convenient transportation and delivery
-              options, to help drivers maximize their earnings, and to protect
-              the safety and security of user.{" "}
-            </p>
-          </article>
-          <article>
-            <h4>You are in control</h4>
-            <p className="gray">
-              We use your data to provide convenient transportation and delivery
-              options, to help drivers maximize their earnings, and to protect
-              the safety and security of user.{" "}
-            </p>
-          </article>
+            <div className="worksteps">
+              <article>
+                <h4>Step1: A rider opens the app</h4>
+                <p className="gray">
+                  The rider enters their destination into the Where to? box on
+                  the top of the screen; taps each ride option to see the wait
+                  time, car sizes, and price, then confirms their pickup
+                  location and taps Request.
+                </p>
+              </article>
+              <article>
+                <h4>Step2: The rider is matched with a driver</h4>
+                <p className="gray">
+                  The rider enters their destination into the Where to? box on
+                  the top of the screen; taps each ride option to see the wait
+                  time, car sizes, and price, then confirms their pickup
+                  location and taps Request.
+                </p>
+              </article>
+              <article>
+                <h4>Step3: The driver picks up the rider</h4>
+                <p className="gray">
+                  The rider enters their destination into the Where to? box on
+                  the top of the screen; taps each ride option to see the wait
+                  time, car sizes, and price, then confirms their pickup
+                  location and taps Request.
+                </p>
+              </article>
+              <article>
+                <h4>Step4: The driver takes the rider to the destination</h4>
+                <p className="gray">
+                  The rider enters their destination into the Where to? box on
+                  the top of the screen; taps each ride option to see the wait
+                  time, car sizes, and price, then confirms their pickup
+                  location and taps Request.
+                </p>
+              </article>
+            </div>
+          </div>
         </form>
       </div>
     );

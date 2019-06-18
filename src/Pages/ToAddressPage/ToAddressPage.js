@@ -21,18 +21,16 @@ class ToAddresspage extends Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         this.props.changeLocation(latLng);
+        localStorage.setItem("toAddress", this.state.address);
+        this.props.history.push("./confirmpage");
       })
       .catch(error => console.error("Error", error));
-  };
-  handleSubmit = (history, event) => {
-    console.log(this.state.address);
-    localStorage.setItem("toAddress", this.state.address);
-    history.push("./confirmpage");
-    event.preventDefault();
   };
 
   render() {
     const { history } = this.props;
+    const value = this.state.address;
+    console.log(value);
     return (
       <PlacesAutocomplete
         value={this.state.address}
@@ -60,11 +58,40 @@ class ToAddresspage extends Component {
                 <i class="fas fa-search" />
               </button>
             </div>
-
-            <div className="autocomplete-dropdown-container">
-              {loading && <div>Loading...</div>}
+            {value ? (
+              <div className="autocomplete-dropdown-container">
+                {loading && <div>Loading...</div>}
+                {console.log(this.state.address)}
+                {}
+                {suggestions.map(suggestion => {
+                  const className = suggestion.active
+                    ? "suggestion-item--active"
+                    : "suggestion-item";
+                  const style = suggestion.active
+                    ? { backgroundColor: "#fafafa", cursor: "pointer" }
+                    : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  return (
+                    <div
+                      {...getSuggestionItemProps(suggestion, {
+                        className,
+                        style
+                      })}
+                    >
+                      <div className="show-item-suggestion">
+                        <i class="fas fa-map-marker-alt" />
+                        <div>
+                          <h5>{suggestion.formattedSuggestion.mainText}</h5>
+                          <p>{suggestion.formattedSuggestion.secondaryText}</p>
+                        </div>
+                      </div>
+                      {/* {console.log(suggestion)} */}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
               <FormDefaultAddress />
-            </div>
+            )}
           </div>
         )}
       </PlacesAutocomplete>

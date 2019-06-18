@@ -1,0 +1,69 @@
+.contactus {
+  background-image: url("../../img/background2.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contactusform {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 60%;
+
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+}
+.contacttitle,
+.select,
+.entername,
+.message {
+  display: flex;
+  align-items: center;
+}
+.groups {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .group1,
+  .group2 {
+    width: 48%;
+    margin-top: 15px;
+
+    .select,
+    .entername,
+    .message {
+      width: 100%;
+      height: 7vh;
+      background-color: white;
+      box-shadow: 15px 15px 15px rgb(199, 199, 199);
+      margin-bottom: 15px;
+      p {
+        margin-right: 20px;
+      }
+      .selectoption,
+      input[type="text"],
+      input[type="textarea"] {
+        font-size: 100%;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .groups {
+    display: flex;
+    flex-direction: column;
+    .group1,
+    .group2 {
+      width: 100%;
+    }
+    .group2 {
+      margin-top: 0px;
+    }
+  }
+}

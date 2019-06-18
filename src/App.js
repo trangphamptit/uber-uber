@@ -44,11 +44,12 @@ class App extends Component {
             <Route path="/showmappage" component={ShowMapPage} />
             <Route path="/showdestination" component={ShowDestination} />
             <Route path="/confirmpage" component={ConfirmPage} />
-            <Route path="/contactpage" component={ContactPage} />
+            {/* <Route path="/contactpage" component={ContactPage} /> */}
             {/* {this.checkUser()} */}
             {/* <Route path="/" exact component={HomePage} /> */}
             {/* <Route path="/" exact component={UberCarePage} /> */}
-            <Route path="/" exact component={UberWorkPage} />
+            {/* <Route path="/" exact component={UberWorkPage} /> */}
+            <Route path="/" exact component={ContactPage} />
           </Switch>
         </BrowserRouter>
       </MainPage>

@@ -21,15 +21,17 @@ class FromAddress extends Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         this.props.changeLocation(latLng);
+        localStorage.setItem("fromAddress", this.state.address);
+        this.props.history.push("./showdestination");
       })
       .catch(error => console.error("Error", error));
   };
-  handleSubmit = (history, event) => {
-    console.log(this.state.address);
-    localStorage.setItem("fromAddress", this.state.address);
-    history.push("./showdestination");
-    event.preventDefault();
-  };
+  // handleSubmit = (history, event) => {
+  //   console.log(this.state.address);
+  //   localStorage.setItem("fromAddress", this.state.address);
+  //   history.push("./showdestination");
+  //   event.preventDefault();
+  // };
 
   render() {
     const { history } = this.props;
@@ -52,11 +54,7 @@ class FromAddress extends Component {
                   className: "location-search-input"
                 })}
               />
-              <button
-                className="search-button"
-                type="submit"
-                onClick={event => this.handleSubmit(history, event)}
-              >
+              <button className="search-button" type="button">
                 <i class="fas fa-search" />
               </button>
             </div>

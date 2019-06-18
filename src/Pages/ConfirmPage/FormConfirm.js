@@ -18,6 +18,9 @@ class FormConfirm extends Component {
     history.push("./contactpage");
     event.preventDefault();
   };
+  goBack = () => {
+    this.props.history.goBack();
+  };
   render() {
     const { history, goBack } = this.props;
     return (
@@ -48,8 +51,8 @@ class FormConfirm extends Component {
         <div className="redirect">
           <button
             className="btn goback-btn"
-            type="submit"
-            onClick={event => this.handleSubmit(goBack, event)}
+            type="button"
+            onClick={this.goBack}
           >
             click
           </button>

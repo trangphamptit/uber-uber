@@ -2,30 +2,51 @@
   top: 20%;
   left: 10%;
   position: absolute;
-  width: 40%;
+  width: 40vw;
   background: rgba(255, 255, 255, 0.75);
   z-index: 1;
   .field {
-    height: 80px;
     width: 100%;
-    padding: 15px;
-    background-color: white;
+    height: 15vh;
     margin-bottom: 15px;
+    background-color: white;
     display: flex;
     position: relative;
-    .fake {
+    .fas {
+      margin: 15px;
+    }
+    .breakdown {
       top: 15px;
       right: 60px;
       position: absolute;
+      border: none;
+      font-weight: bold;
     }
   }
   .redirect {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
     .btn {
-      width: 40%;
+      width: 50%;
+      height: 15vh;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
+
+    .goback-btn {
+      display: flex;
+      align-items: center;
+      border: none;
+      background-color: unset;
+      float: left;
+    }
+    .gonext-btn {
+      float: right;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .field,
+  .redirect {
+    height: 10vh;
   }
 }

@@ -3,7 +3,7 @@ import "./FormConfirm.scss";
 import arrow_right from "../../img/arrow_right.png";
 import { withRouter } from "react-router-dom";
 import RectangleButton from "../../components/buttons/RectangleButton";
-
+import goback from "../../img/goback.png";
 class FormConfirm extends Component {
   constructor(props) {
     super(props);
@@ -25,28 +25,36 @@ class FormConfirm extends Component {
     const { history, goBack } = this.props;
     return (
       <form className="formConfirm">
-        <div className="field fromField">
+        <div className="field">
           <i class="fas fa-map-marker-alt" />
-          <div className="content">
-            <h5>From</h5>
-            <label>{this.state.fromAddress}</label>
-          </div>
+          <article>
+            <h4>From</h4>
+            <p>{this.state.fromAddress}</p>
+          </article>
         </div>
-        <div className="field toField">
+
+        <div className="field">
           <i class="fas fa-map-marker-alt" />
-          <div className="content">
-            <h5>To</h5>
-            <label>{this.state.toAddress}</label>
-          </div>
+          <article>
+            <h4>To</h4>
+            <p>{this.state.toAddress}</p>
+          </article>
         </div>
-        <div className="field toField">
-          {/* <i class="fas fa-map-marker-alt" /> */}
-          <div className="content">
-            <h5>Price</h5>
+
+        <div className="field ">
+          <i class="fas fa-map-marker-alt" />
+          <article>
+            <h4>Price</h4>
             <p>Kilomets: 3.85km</p>
             <p>Time: 35minutes</p>
-          </div>
-          <h5 class="fake">Fake breakdown</h5>
+          </article>
+
+          <select class="breakdown">
+            <option value="volvo">Fake breakdown</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
         </div>
         <div className="redirect">
           <button
@@ -54,9 +62,10 @@ class FormConfirm extends Component {
             type="button"
             onClick={this.goBack}
           >
-            click
+            <img src={goback} />
+            back
           </button>
-          <div className="btn">
+          <div className="btn gonext-btn">
             <RectangleButton
               imgSrc={arrow_right}
               onClick={event => this.handleSubmit(history, event)}

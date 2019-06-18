@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import HomePage from "./Pages/HomePage/HomePage";
 import PhonePage from "./Pages/PhonePage/PhonePage";
@@ -12,28 +12,44 @@ import ShowMapPage from "./Pages/ShowMapPage/ShowMapPage";
 import ShowDestination from "./Pages/ShowDestination/ShowDestination";
 import ConfirmPage from "./Pages/ConfirmPage/ConfirmPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
-function App() {
-  return (
-    <BrowserRouter>
+import { Redirect } from "react-router-dom";
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: ""
+    };
+  }
+  componentWillMount() {
+    const username = localStorage.getItem("username");
+    this.setState({ username });
+  }
+  checkUser = () => {
+    if (this.state.username) {
+      return <Redirect to="/codepage" />;
+    }
+    console.log(this.state.username);
+  };
+
+  render() {
+    return (
       <MainPage>
-        <Switch>
-          {/* <Route path="/showmappage" component={ShowMapPage} /> */}
-          {/* <Route path="/showlocal" component={ShowLocal} /> */}
-          <Route path="/phonepage" component={PhonePage} />
-          <Route path="/codepage" component={CodePage} />
-          <Route path="/userpage" component={UserPage} />
-          <Route path="/" exact component={HomePage} />
-          <Route path="/showmappage" component={ShowMapPage} />
-          <Route path="/showdestination" component={ShowDestination} />
-          <Route path="/confirmpage" component={ConfirmPage} />
-          <Route path="/contactpage" component={ContactPage} />
-          {/* <Route path="/phonepage" component={PhonePage} />
-          <Route path="/codepage" component={CodePage} />
-          <Route path="/inforpage" component={InforPage} /> */}
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/phonepage" component={PhonePage} />
+            <Route path="/codepage" component={CodePage} />
+            <Route path="/userpage" component={UserPage} />
+            <Route path="/showmappage" component={ShowMapPage} />
+            <Route path="/showdestination" component={ShowDestination} />
+            <Route path="/confirmpage" component={ConfirmPage} />
+            <Route path="/contactpage" component={ContactPage} />
+            {this.checkUser()}
+            <Route path="/" exact component={HomePage} />
+          </Switch>
+        </BrowserRouter>
       </MainPage>
-    </BrowserRouter>
-  );
+    );
+  }
 }
 
 export default App;

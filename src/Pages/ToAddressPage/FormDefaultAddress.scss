@@ -1,0 +1,56 @@
+.modal-location {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(156, 152, 152, 0.75);
+  padding: 10px;
+}
+
+.address-field {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  height: 50px;
+}
+
+.address-field:hover {
+  background-color: gray;
+}
+.content {
+  padding-left: 10px;
+}
+.address {
+  font-size: 0.5rem;
+}
+.title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.8rem;
+}
+.fa-briefcase {
+  margin-left: 5px;
+}
+.fa-iglo {
+  margin-left: 5px;
+}
+.address-image {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  .imgItem {
+    width: 18vw;
+    height: 100%;
+    border-radius: 12px;
+    .address-img1 {
+      width: 100%;
+      position: relative;
+    }
+  }
+  .text-content {
+    bottom: 8px;
+    left: 2px;
+    position: absolute;
+  }
+}

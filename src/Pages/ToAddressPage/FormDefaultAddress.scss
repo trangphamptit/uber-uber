@@ -2,37 +2,25 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: rgba(156, 152, 152, 0.75);
+  background-color: rgba(214, 210, 210, 0.75);
   padding: 10px;
 }
 
 .address-field {
   display: flex;
   justify-content: start;
+  align-items: center;
   width: 100%;
-  height: 50px;
+  height: 12vh;
+  .fas {
+    margin-right: 15px;
+  }
 }
 
 .address-field:hover {
   background-color: gray;
 }
-.content {
-  padding-left: 10px;
-}
-.address {
-  font-size: 0.5rem;
-}
-.title {
-  margin: 0px;
-  padding: 0px;
-  font-size: 0.8rem;
-}
-.fa-briefcase {
-  margin-left: 5px;
-}
-.fa-iglo {
-  margin-left: 5px;
-}
+
 .address-image {
   width: 100%;
   height: 80px;
@@ -48,9 +36,35 @@
       position: relative;
     }
   }
-  .text-content {
-    bottom: 8px;
+  article.text-content {
+    bottom: 0px;
     left: 2px;
     position: absolute;
+    color: white;
+  }
+}
+.nearby {
+  display: flex;
+  flex-direction: row;
+}
+.nearbyitem {
+  width: 140px;
+  height: 160px;
+  background-color: white;
+  margin-right: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  .nearbyimg {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .nearby {
+    display: none;
+  }
+  .nearbytitle {
+    display: none;
   }
 }

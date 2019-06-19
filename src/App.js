@@ -28,7 +28,7 @@ class App extends Component {
   }
   checkUser = () => {
     if (this.state.username) {
-      return <Redirect to="/codepage" />;
+      return <Redirect to="/showmappage" />;
     }
     console.log(this.state.username);
   };
@@ -43,12 +43,13 @@ class App extends Component {
             <Route path="/userpage" component={UserPage} />
             <Route path="/showmappage" component={ShowMapPage} />
             <Route path="/showdestination" component={ShowDestination} />
-            <Route path="/" component={ConfirmPage} />
-            {/* <Route path="/contactpage" component={ContactPage} /> */}
-            {/* {this.checkUser()} */}
-            {/* <Route path="/" exact component={HomePage} /> */}
-            {/* <Route path="/" exact component={UberCarePage} /> */}
-            {/* <Route path="/" exact component={UberWorkPage} /> */}
+            <Route path="/confirmpage" component={ConfirmPage} />
+            <Route path="/contactpage" component={ContactPage} />
+            <Route path="/ubercarepage" exact component={UberCarePage} />
+            <Route path="/uberworkpage" exact component={UberWorkPage} />
+            {this.checkUser()}
+            <Route path="/" exact component={HomePage} />
+
             {/* <Route path="/" exact component={ContactPage} /> */}
           </Switch>
         </BrowserRouter>

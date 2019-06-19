@@ -19,7 +19,7 @@ class FormConfirm extends Component {
     event.preventDefault();
   };
   goBack = () => {
-    this.props.history.goBack();
+    this.props.history.goBack("./showdestination");
   };
   render() {
     const { history, goBack } = this.props;
